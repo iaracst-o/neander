@@ -7,19 +7,19 @@ module ULA(
   always @(*)  // quando a entrada mudar, a ula recalcula tudo novamente
     begin
       case(selULA)
-      3'b000:     // 000 ADD
+      3'b000:      // 000 ADD
         AC = X + Y; 
-      3'b001:      // 001 AND
+      3'b001:       // 001 OR
         AC = X | Y;
-      3'b010:       // 010 OR
+      3'b010:       // 010 AND
         AC = X & Y;
-      3'b011:       // 011 NOT
+      3'b011:        // 011 NOT
       	AC = ~X;
       default:
-        AC = X;
+        AC = X;      // AC mantem X
       endcase
-      N = AC[15];
-      Z = (AC == 16'b0);
+      N = AC[15];  
+      Z = (AC == 16'b0); 
     end
     
 endmodule

@@ -29,7 +29,7 @@ module datapath(
     //RI
 
     logic ri_load;  //carga RI (decide quando RI vai guardar o valor que chegou de RDM)
-    logic ri_out;   // a saida de RI é o OPCODE
+    logic [3:0] ri_out;   // a saida de RI é o OPCODE 
 
     // AC
 
